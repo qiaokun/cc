@@ -22,12 +22,11 @@ import { AppService } from '../../app.service';
                       <option value="large"></option>
                       <option value="huge"></option>
                     </select>
-                   
                     <button class="ql-bold"></button>
                     <button class="ql-script" value="sub"></button>
                     <button class="ql-script" value="super"></button>
                 </c-header-tpl>
-              </c-editor>        
+              </c-editor>
           </div>
         </div>
         <div class="row">
@@ -42,12 +41,11 @@ import { AppService } from '../../app.service';
   `
 })
 export class EditorDemoComponent {
-  text: string='这里面是内容..';
-  text2:string='这里面是内容..';
+  text = '这里面是内容..';
+  text2 = '这里面是内容..';
 
    constructor(private appService: AppService) {
-    
-    this.appService.titleEventEmitter.emit("富文本编辑器");
+    this.appService.titleEventEmitter.emit('富文本编辑器');
   }
 
 }

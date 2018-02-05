@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { AppService } from '../../app.service';
 
@@ -36,25 +36,25 @@ import { SessionStorageService } from '../../shared/storage/session-storage.serv
 })
 export class StorageDemoComponent {
 
-  constructor(private appService: AppService,private lgs:LocalStorageService) {
-    
-    this.appService.titleEventEmitter.emit("本地存储");
+  constructor(private appService: AppService, private lgs: LocalStorageService) {
+
+    this.appService.titleEventEmitter.emit('本地存储');
   }
 
-  setVal(){
-    this.lgs.set('v1','aaaa');
+  setVal() {
+    this.lgs.set('v1', 'aaaa');
   }
 
-  getVal(){
-    console.info(this.lgs.get('v1'));
+  getVal() {
+    window.console.info(this.lgs.get('v1'));
   }
 
-  setObj(){
-    this.lgs.setObject('o1',{'v1':'123'});
+  setObj() {
+    this.lgs.setObject('o1', { 'v1': '123' });
   }
 
-  getObj(){
-    console.info(this.lgs.getObject('o1'));
+  getObj() {
+    window.console.info(this.lgs.getObject('o1'));
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import  { AppService }   from '../../app.service';
+import { AppService } from '../../app.service';
 
 import { HierarchyViewData } from '../../shared/hierarchy-view/hierarchy-view-model';
 
@@ -17,7 +17,6 @@ import { HierarchyViewData } from '../../shared/hierarchy-view/hierarchy-view-mo
               <button type="button" class="btn btn-danger" (click)="resetData()">重置数据</button>
           </div>
         </div>
-      
        <c-hierarchy-view [data]="viewData" (onClicked)="nodeClicked($event)"></c-hierarchy-view>
        <div class="row">
           <div  class="col-md-12">
@@ -31,9 +30,6 @@ import { HierarchyViewData } from '../../shared/hierarchy-view/hierarchy-view-mo
   `
 })
 export class HierarchyViewDemoComponent {
-
- 
-
 
   initData: HierarchyViewData = {
     total: 32,
@@ -247,11 +243,11 @@ export class HierarchyViewDemoComponent {
 
 
   constructor(private appService:AppService){
-     this.appService.titleEventEmitter.emit("层次图");
+     this.appService.titleEventEmitter.emit('层次图');
   }
 
   nodeClicked(node) {
-    console.info(node);
+    window.console.info(node);
   }
 
   changeData() {

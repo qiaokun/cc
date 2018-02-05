@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { AppService } from '../../app.service';
 
@@ -9,7 +9,7 @@ import { AppService } from '../../app.service';
   templateUrl: './validator-demo.component.html'
 })
 export class ValidatorDemoComponent {
- 
+
 
   constructor(private appService: AppService) {
     this.appService.titleEventEmitter.emit("验证器示例");

@@ -1,61 +1,61 @@
 import { Component, OnInit } from '@angular/core';
 
-import  { AppService }   from '../../app.service';
+import { AppService } from '../../app.service';
 
-export var single = [
+export const single = [
     {
-        "name": "某国",
-        "value": 8940000
+        'name': '某国',
+        'value': 8940000
     },
     {
-        "name": "某某国",
-        "value": 5000000
+        'name': '某某国',
+        'value': 5000000
     },
     {
-        "name": "某某某国",
-        "value": 7200000
+        'name': '某某某国',
+        'value': 7200000
     }
 ];
 
-export var multi = [
+export const multi = [
     {
-        "name": "某国",
-        "series": [
+        'name': '某国',
+        'series': [
             {
-                "name": "2010",
-                "value": 7300000
+                'name': '2010',
+                'value': 7300000
             },
             {
-                "name": "2011",
-                "value": 8940000
+                'name': '2011',
+                'value': 8940000
             }
         ]
     },
 
     {
-        "name": "某某国",
-        "series": [
+        'name': '某某国',
+        'series': [
             {
-                "name": "2010",
-                "value": 7870000
+                'name': '2010',
+                'value': 7870000
             },
             {
-                "name": "2011",
-                "value": 8270000
+                'name': '2011',
+                'value': 8270000
             }
         ]
     },
 
     {
-        "name": "某某某国",
-        "series": [
+        'name': '某某某国',
+        'series': [
             {
-                "name": "2010",
-                "value": 5000002
+                'name': '2010',
+                'value': 5000002
             },
             {
-                "name": "2011",
-                "value": 5800000
+                'name': '2011',
+                'value': 5800000
             }
         ]
     }
@@ -109,7 +109,7 @@ export class NgxChartsDemoComponent {
     showYAxis = true;
     gradient = false;
     showLegend = true;
-    legendTitle="图例";
+    legendTitle = '图例';
     showXAxisLabel = true;
     xAxisLabel = '图家';
     showYAxisLabel = true;
@@ -119,8 +119,8 @@ export class NgxChartsDemoComponent {
         domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
     };
 
-    constructor(private appService:AppService) {
-        this.appService.titleEventEmitter.emit("图表");
+    constructor(private appService: AppService) {
+        this.appService.titleEventEmitter.emit('图表');
         Object.assign(this, { single });
 
     }

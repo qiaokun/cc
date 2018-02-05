@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ModalService } from '../../shared/modal/modal.service';
 import { ConfirmConfig, AlertType, AlertConfig } from '../../shared/modal/modal-model';
-import  { AppService }   from '../../app.service';
+import { AppService } from '../../app.service';
 
 
 @Component({
@@ -26,20 +26,19 @@ import  { AppService }   from '../../app.service';
             </div>
           </div>
       </div>
-      
     </div>
   `
 })
 export class ModalDemoComponent {
 
-  constructor(private modalService: ModalService,private appService:AppService) {
-      this.appService.titleEventEmitter.emit("模态框");
+  constructor(private modalService: ModalService, private appService: AppService) {
+    this.appService.titleEventEmitter.emit('模态框');
   }
 
 
   onGridReady(params) {
     params.api.sizeColumnsToFit();
-}
+  }
 
 
   openInfo() {

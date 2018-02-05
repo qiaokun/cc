@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ImageCropperComponent, CropperSettings, Bounds } from 'ng2-img-cropper';
 
-import  { AppService }   from '../../app.service';
+import { AppService } from '../../app.service';
 
 
 @Component({
@@ -18,7 +18,8 @@ import  { AppService }   from '../../app.service';
                      <input id="image-input" type="file" c-img-cropper-select [cropper]="cropper">
                   </div>
                    <div class="c-mt15" *ngIf="data1.image">
-                      <img class="center-block rounded-circle"   [src]="data1.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+                      <img class="center-block rounded-circle"
+                      [src]="data1.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
                    </div>
                </div>
           </div>
@@ -42,7 +43,7 @@ export class ImgCropperDemoComponent implements OnInit {
 
     @ViewChild('cropper', undefined) cropper: ImageCropperComponent;
 
-    constructor(private appService:AppService) {
+    constructor(private appService: AppService) {
         this.appService.titleEventEmitter.emit("图片裁剪");
 
         this.name = 'Angular2';
@@ -75,12 +76,12 @@ export class ImgCropperDemoComponent implements OnInit {
 
 
     cropped(bounds: Bounds) {
-        console.info(bounds);
-        console.info(this.data1.image);
+        window.console.info(bounds);
+        window.console.info(this.data1.image);
     }
 
- 
 
-    
+
+
 
 }

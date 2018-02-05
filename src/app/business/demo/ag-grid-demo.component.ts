@@ -20,25 +20,23 @@ export class AgGridDemoComponent {
 
 
   constructor(private appService: AppService) {
-    this.appService.titleEventEmitter.emit("ag-grid示例");
+    this.appService.titleEventEmitter.emit('ag-grid示例');
 
 
     this.columnDefs = [
-      { headerName: "Make", field: "make", width: 300 },
-      { headerName: "Model", field: "model", width: 300 },
-      { headerName: "Price", field: "price", width: 300 },
-      { headerName: "aaa", field: "aaa", width: 500 }
+      { headerName: 'Make', field: 'make', width: 300 },
+      { headerName: 'Model', field: 'model', width: 300 },
+      { headerName: 'Price', field: 'price', width: 300 },
+      { headerName: 'aaa', field: 'aaa', width: 500 }
     ];
 
     this.rowData = [
-      { make: "Toyota", model: "Celica", price: 35000, aaa: '789456' },
-      { make: "Ford", model: "Mondeo", price: 32000, aaa: '0123456' },
-      { make: "Porsche", model: "Boxter", price: 72000, aaa: '123456' }
+      { make: 'Toyota', model: 'Celica', price: 35000, aaa: '789456' },
+      { make: 'Ford', model: 'Mondeo', price: 32000, aaa: '0123456' },
+      { make: 'Porsche', model: 'Boxter', price: 72000, aaa: '123456' }
     ]
   }
 
-
-  
 
 
 

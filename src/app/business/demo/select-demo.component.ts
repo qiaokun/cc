@@ -50,7 +50,6 @@ import { Select2OptionData } from 'ng2-select2';
 
                 <button class="btn btn-danger" (click)="onSingleResetClick()">重置</button>
 
-  
                     <form style="padding:18px;max-width:800px;" [formGroup]="formMultiple">
                     <div style="margin:5px 0;font-weight:600;">多选</div>
                     <ng-select
@@ -73,13 +72,10 @@ import { Select2OptionData } from 'ng2-select2';
                     <pre #preMultiple>{{logMultipleString}}</pre>
                 </form>
                 <button class="btn btn-danger" (click)="onMultipleResetClick()">重置</button>
-        
                 <button class="btn btn-primary" (click)="onMultipleSetOptions1Click()">设置</button>
 
-              
           </div>
         </div>
-      
        <div class="row">
           <div  class="col-md-12">
             <div class="c-mt15">
@@ -92,140 +88,10 @@ import { Select2OptionData } from 'ng2-select2';
 
 
 
-
-        
   `
 })
 
 export class SelectDemoComponent implements OnInit {
-
-    formSingle: FormGroup;
-    multipleSingle: boolean = false;
-    optionsSingle: Array<any> = [];
-    alternativeOptionsSingle: Array<any> = [];
-    initialValueSingle: string = '22';
-    allowClear: boolean = true;
-
-    formMultiple: FormGroup;
-    multipleMultiple: boolean = true;
-    optionsMultiple: Array<any> = [];
-    alternativeOptionsMultiple: Array<any> = [];
-    initialValueMultiple: Array<string> = ['0', '2', '22', '66'];
-
-    opts;
-    alternativeOpts;
-
-    @ViewChild('singleSelectComponent') singleSelectComponent;
-    @ViewChild('multipleSelectComponent') multipleSelectComponent;
-
-    @ViewChild('preSingle') preSingle;
-    @ViewChild('preMultiple') preMultiple;
-
-    logSingleString: string = '';
-    logMultipleString: string = '';
-
-    constructor(private appService: AppService) {
-        this.appService.titleEventEmitter.emit("下拉");
-
-        this.opts = this.OPTIONS_A;
-
-        this.alternativeOpts = [{
-            value: '0',
-            label: '0'
-        }, {
-            value: '1',
-            label: '1'
-        }, {
-            value: 'A',
-            label: 'A'
-        }, {
-            value: 'B',
-            label: 'B'
-        }]
-
-        this.optionsSingle = this.opts.slice(0);
-        this.optionsMultiple = this.opts.slice(0);
-    }
-
-    ngOnInit() {
-        this.formSingle = new FormGroup({});
-        this.formSingle.addControl('selectSingle',
-            new FormControl(this.initialValueSingle));
-
-        this.formMultiple = new FormGroup({});
-        this.formMultiple.addControl('selectMultiple',
-            new FormControl(this.initialValueMultiple));
-    }
-
-    onSingleOpened() {
-        this.logSingle('- opened');
-    }
-
-    onSingleClosed() {
-        this.logSingle('- closed');
-    }
-
-    onSingleSelected(item) {
-        this.logSingle('- selected (value: ' + item.value + ', label:' +
-            item.label + ')');
-    }
-
-    onSingleDeselected(item) {
-        this.logSingle('- deselected (value: ' + item.value + ', label:' +
-            item.label + ')');
-    }
-
-    onMultipleOpened() {
-        this.logMultiple('- opened');
-    }
-
-    onMultipleClosed() {
-        this.logMultiple('- closed');
-    }
-
-    onMultipleSelected(item) {
-        this.logMultiple('- selected (value: ' + item.value + ', label:' +
-            item.label + ')');
-    }
-
-    onMultipleDeselected(item) {
-        this.logMultiple('- deselected (value: ' + item.value + ', label:' +
-            item.label + ')');
-    }
-
-    onSingleResetClick() {
-        this.formSingle.reset();
-    }
-
-    onMultipleResetClick() {
-        this.formMultiple.reset();
-    }
-
-    onMultipleSetOptions1Click() {
-        this.optionsMultiple = this.alternativeOpts.slice(0);
-    }
-
-     logSingle(msg: string) {
-        this.logSingleString += msg + '\n';
-
-        // Let change detection do its work before scrolling to div bottom.
-        setTimeout(() => {
-            this.scrollToBottom(this.preSingle.nativeElement);
-        });
-    }
-
-     logMultiple(msg: string) {
-        this.logMultipleString += msg + '\n';
-
-        // Let change detection do its work before scrolling to div bottom.
-        setTimeout(() => {
-            this.scrollToBottom(this.preMultiple.nativeElement);
-        });
-    }
-
-     scrollToBottom(elem) {
-        elem.scrollTop = elem.scrollHeight;
-    }
 
     OPTIONS_A = [
         { label: 'Agrajag', value: '0' },
@@ -370,27 +236,25 @@ export class SelectDemoComponent implements OnInit {
 
     OPTIONS_B = [];
 
-
-
-     options: Select2Options = {
+    options: Select2Options = {
         placeholder: '请选择...',
         multiple: true,
-        theme: "bootstrap",
+        theme: 'bootstrap',
         width: '100%',
         language: {
-            "noResults": function () {
-                return "搜索不到数据..";
+            'noResults': function () {
+                return '搜索不到数据..';
             }
         }
     };
 
-     options2: Select2Options = {
+    options2: Select2Options = {
         placeholder: '请选择...',
         width: '100%',
-        theme: "bootstrap",
+        theme: 'bootstrap',
         language: {
-            "noResults": function () {
-                return "搜索不到数据..";
+            'noResults': function () {
+                return '搜索不到数据..';
             }
         }
     };
@@ -414,4 +278,133 @@ export class SelectDemoComponent implements OnInit {
             text: '选项4'
         }
     ];
+
+    formSingle: FormGroup;
+    multipleSingle = false;
+    optionsSingle: Array<any> = [];
+    alternativeOptionsSingle: Array<any> = [];
+    initialValueSingle = '22';
+    allowClear = true;
+
+    formMultiple: FormGroup;
+    multipleMultiple = true;
+    optionsMultiple: Array<any> = [];
+    alternativeOptionsMultiple: Array<any> = [];
+    initialValueMultiple: Array<string> = ['0', '2', '22', '66'];
+
+    opts;
+    alternativeOpts;
+
+    @ViewChild('singleSelectComponent') singleSelectComponent;
+    @ViewChild('multipleSelectComponent') multipleSelectComponent;
+
+    @ViewChild('preSingle') preSingle;
+    @ViewChild('preMultiple') preMultiple;
+
+    logSingleString = '';
+    logMultipleString = '';
+
+    constructor(private appService: AppService) {
+        this.appService.titleEventEmitter.emit('下拉');
+
+        this.opts = this.OPTIONS_A;
+
+        this.alternativeOpts = [{
+            value: '0',
+            label: '0'
+        }, {
+            value: '1',
+            label: '1'
+        }, {
+            value: 'A',
+            label: 'A'
+        }, {
+            value: 'B',
+            label: 'B'
+        }]
+
+        this.optionsSingle = this.opts.slice(0);
+        this.optionsMultiple = this.opts.slice(0);
+    }
+
+    ngOnInit() {
+        this.formSingle = new FormGroup({});
+        this.formSingle.addControl('selectSingle',
+            new FormControl(this.initialValueSingle));
+
+        this.formMultiple = new FormGroup({});
+        this.formMultiple.addControl('selectMultiple',
+            new FormControl(this.initialValueMultiple));
+    }
+
+    onSingleOpened() {
+        this.logSingle('- opened');
+    }
+
+    onSingleClosed() {
+        this.logSingle('- closed');
+    }
+
+    onSingleSelected(item) {
+        this.logSingle('- selected (value: ' + item.value + ', label:' +
+            item.label + ')');
+    }
+
+    onSingleDeselected(item) {
+        this.logSingle('- deselected (value: ' + item.value + ', label:' +
+            item.label + ')');
+    }
+
+    onMultipleOpened() {
+        this.logMultiple('- opened');
+    }
+
+    onMultipleClosed() {
+        this.logMultiple('- closed');
+    }
+
+    onMultipleSelected(item) {
+        this.logMultiple('- selected (value: ' + item.value + ', label:' +
+            item.label + ')');
+    }
+
+    onMultipleDeselected(item) {
+        this.logMultiple('- deselected (value: ' + item.value + ', label:' +
+            item.label + ')');
+    }
+
+    onSingleResetClick() {
+        this.formSingle.reset();
+    }
+
+    onMultipleResetClick() {
+        this.formMultiple.reset();
+    }
+
+    onMultipleSetOptions1Click() {
+        this.optionsMultiple = this.alternativeOpts.slice(0);
+    }
+
+    logSingle(msg: string) {
+        this.logSingleString += msg + '\n';
+
+        // Let change detection do its work before scrolling to div bottom.
+        setTimeout(() => {
+            this.scrollToBottom(this.preSingle.nativeElement);
+        });
+    }
+
+    logMultiple(msg: string) {
+        this.logMultipleString += msg + '\n';
+
+        // Let change detection do its work before scrolling to div bottom.
+        setTimeout(() => {
+            this.scrollToBottom(this.preMultiple.nativeElement);
+        });
+    }
+
+    scrollToBottom(elem) {
+        elem.scrollTop = elem.scrollHeight;
+    }
+
 }

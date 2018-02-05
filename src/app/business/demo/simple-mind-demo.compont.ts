@@ -21,68 +21,69 @@ import { SpinService } from '../../shared/spin/spin.service';
 export class SimpleMindDemoComponent implements OnInit {
     data: any = [
         {
-          id:'1',
-          nodeName:'java平台版本',
-          childern:[
-            {
-                id:'2',
-                nodeName:'Java SE',
-                childern:[
-                    {
-                        id:'2',
-                        nodeName:'Java SE'
-                    }
-                ]
-            },
-            {
-                id:'2',
-                nodeName:'Java EE',
-                childern:[
-                    {
-                        id:'2',
-                        nodeName:'Java SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SE'
-                    },
-                    {
-                        id:'2',
-                        nodeName:'Java SE'
-                    }
-                ]
-            },
-            {
-                id:'3',
-                nodeName:'Java ME',
-                childern:[
-                    {
-                        id:'2',
-                        nodeName:'Java SE'
-                    },
-                    {
-                        id:'2',
-                        nodeName:'Java SE'
-                    },
-                    {
-                        id:'2',
-                        nodeName:'Java SE'
-                    },
-                    {
-                        id:'2',
-                        nodeName:'Java SE'
-                    },
-                    {
-                        id:'2',
-                        nodeName:'Java SE'
-                    }
-                ]
-            }
-          ]
+            id: '1',
+            nodeName: 'java平台版本',
+            childern: [
+                {
+                    id: '2',
+                    nodeName: 'Java SE',
+                    childern: [
+                        {
+                            id: '2',
+                            nodeName: 'Java SE'
+                        }
+                    ]
+                },
+                {
+                    id: '2',
+                    nodeName: 'Java EE',
+                    childern: [
+                        {
+                            id: '2',
+                            nodeName: 'Java SEJava SEJava SEJava SEJava SEJava '
+                            + 'SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SEJava SE'
+                        },
+                        {
+                            id: '2',
+                            nodeName: 'Java SE'
+                        }
+                    ]
+                },
+                {
+                    id: '3',
+                    nodeName: 'Java ME',
+                    childern: [
+                        {
+                            id: '2',
+                            nodeName: 'Java SE'
+                        },
+                        {
+                            id: '2',
+                            nodeName: 'Java SE'
+                        },
+                        {
+                            id: '2',
+                            nodeName: 'Java SE'
+                        },
+                        {
+                            id: '2',
+                            nodeName: 'Java SE'
+                        },
+                        {
+                            id: '2',
+                            nodeName: 'Java SE'
+                        }
+                    ]
+                }
+            ]
         }
     ]
 
 
-    constructor(private appService: AppService,private spinService:SpinService) {
-        
-        this.appService.titleEventEmitter.emit("简单导图");
-      }
+    constructor(private appService: AppService, private spinService: SpinService) {
+
+        this.appService.titleEventEmitter.emit('简单导图');
+    }
 
     ngOnInit() {
     }

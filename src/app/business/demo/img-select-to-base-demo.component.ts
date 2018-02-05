@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import  { AppService }   from '../../app.service';
+import { AppService } from '../../app.service';
 
 
 @Component({
-    selector: 'c-img-select-to-base-demo',
-    template: `
+  selector: 'c-img-select-to-base-demo',
+  template: `
      <div class="c-content-inner">
        <div class="row">
           <div  class="col-md-12">
@@ -33,18 +33,18 @@ import  { AppService }   from '../../app.service';
     `
 })
 export class ImgSelectToBaseDemoComponent {
-   img:any;
-  
-  onLoad(img){
-      console.info(img);
-      this.img=img;
-  } 
+  img: any;
+
+  onLoad(img) {
+    window.console.info(img);
+    this.img = img;
+  }
 
   constructor(private appService: AppService) {
-    this.appService.titleEventEmitter.emit("图片转换成base64");
+    this.appService.titleEventEmitter.emit('图片转换成base64');
   }
- 
 
-    
+
+
 
 }

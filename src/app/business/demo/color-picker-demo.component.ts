@@ -11,7 +11,7 @@ import { AppService } from '../../app.service';
 })
 export class ColorPickerDemoComponent {
 
-  color: string = '#ff0000';
+  color = '#ff0000';
 
   color2: any = {
     r: 100, g: 130, b: 150
@@ -21,10 +21,10 @@ export class ColorPickerDemoComponent {
     h: 100, s: 50, b: 50
   };
 
-  selectColor:string='#1190d6';
+  selectColor = '#1190d6';
 
   constructor(private appService: AppService) {
-    this.appService.titleEventEmitter.emit("颜色选择器示例");
+    this.appService.titleEventEmitter.emit('颜色选择器示例');
   }
 
 

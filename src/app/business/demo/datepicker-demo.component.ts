@@ -23,9 +23,12 @@ import { AppService } from '../../app.service';
                   </span>
                 </div>
                 <ngb-timepicker [(ngModel)]="time" [size]="'small'"></ngb-timepicker>
-                <input [(ngModel)]="selectedDate1" [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'daytime'"  class="form-control" placeholder="日期与时间" />
-                <input [(ngModel)]="selectedDate2" [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'day'"  class="form-control" placeholder="日期" />
-                <input [(ngModel)]="selectedDate3" [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'time'"  class="form-control" placeholder="时间" />
+                <input [(ngModel)]="selectedDate1"
+                [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'daytime'"  class="form-control" placeholder="日期与时间" />
+                <input [(ngModel)]="selectedDate2"
+                [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'day'"  class="form-control" placeholder="日期" />
+                <input [(ngModel)]="selectedDate3"
+                [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'time'"  class="form-control" placeholder="时间" />
               </div>
           </div>
         </div>
@@ -53,7 +56,7 @@ export class DatepickerDemoComponent {
 
 
   constructor(private appService: AppService) {
-    this.appService.titleEventEmitter.emit("日期选择");
+    this.appService.titleEventEmitter.emit('日期选择');
   }
 
 

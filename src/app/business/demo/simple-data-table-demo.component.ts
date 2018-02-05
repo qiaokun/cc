@@ -16,7 +16,7 @@ export class SimpleDataTableDemoComponent {
 
   @ViewChild('hp2', undefined) hp2: SimpleDataHttpPageComponent;
 
-  url: string = environment.domain+"/system/user/findList";
+  url: string = environment.domain + '/system/user/findList';
 
   param: any = {
     name: 'admin',
@@ -25,11 +25,11 @@ export class SimpleDataTableDemoComponent {
 
   pageList: Array<number> = [15, 25, 35]
 
-  btnCls: string = 'btn-outline-info';
+  btnCls = 'btn-outline-info';
 
 
 
-  url2: string = environment.domain+"/system/user/findList";
+  url2: string = environment.domain + '/system/user/findList';
 
   param2: any = {
     name: 'admin',
@@ -38,11 +38,11 @@ export class SimpleDataTableDemoComponent {
 
   pageList2: Array<number> = [15, 25, 35]
 
-  btnCls2: string = 'btn-outline-info';
+  btnCls2 = 'btn-outline-info';
 
 
   constructor(private appService: AppService) {
-    this.appService.titleEventEmitter.emit("简单数据表格");
+    this.appService.titleEventEmitter.emit('简单数据表格');
 
   }
 

@@ -40,7 +40,7 @@ import { SimpleMindDemoComponent } from './simple-mind-demo.compont';
  */
 const demoRoutes: Routes = [
     {
-        path: '', 
+        path: '',
         component: DemoComponent,
         children: [
             {

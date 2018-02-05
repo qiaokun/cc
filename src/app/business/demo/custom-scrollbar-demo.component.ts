@@ -56,8 +56,7 @@ export class CustomScrollbarDemoComponent {
 
 
   constructor(private appService: AppService) {
-    this.appService.titleEventEmitter.emit("模拟滚动条");
+    this.appService.titleEventEmitter.emit('模拟滚动条');
   }
 
-  
 }

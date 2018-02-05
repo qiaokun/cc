@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { AppService } from '../../app.service';
 import { SpinService } from '../../shared/spin/spin.service';
@@ -26,17 +26,17 @@ import { SpinService } from '../../shared/spin/spin.service';
   `
 })
 export class SpinDemoComponent {
- 
-  constructor(private appService: AppService,private spinService:SpinService) {
-    
-    this.appService.titleEventEmitter.emit("旋转动画");
+
+  constructor(private appService: AppService, private spinService: SpinService) {
+
+    this.appService.titleEventEmitter.emit('旋转动画');
   }
 
-  show(){
-       this.spinService.spin(true);
-       setTimeout(() => {
-         this.spinService.spin(false);
-       },1000);
+  show() {
+    this.spinService.spin(true);
+    setTimeout(() => {
+      this.spinService.spin(false);
+    }, 1000);
   }
 
 }

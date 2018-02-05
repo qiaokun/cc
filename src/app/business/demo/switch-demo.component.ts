@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { AppService } from '../../app.service';
 
@@ -51,18 +51,18 @@ import { SwitchTheme } from '../../shared/switch/switch-model';
   `
 })
 export class SwitchDemoComponent {
-  swbtn: boolean = true;
-  theme:string=SwitchTheme.THTME_WARNING;
-  theme2:string=SwitchTheme.THTME_SUCCESS;
+  swbtn = true;
+  theme: string = SwitchTheme.THTME_WARNING;
+  theme2: string = SwitchTheme.THTME_SUCCESS;
 
   constructor(private appService: AppService) {
-    
-    this.appService.titleEventEmitter.emit("开关按钮");
+
+    this.appService.titleEventEmitter.emit('开关按钮');
   }
 
- 
 
-  change($event){
-    console.info(this.swbtn);
+
+  change($event) {
+    window.console.info(this.swbtn);
   }
 }

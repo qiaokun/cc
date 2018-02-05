@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { IMultiSelectOption, IMultiSelectTexts, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 
-import  { AppService }   from '../../app.service';
+import { AppService } from '../../app.service';
 
 
 @Component({
@@ -12,7 +12,9 @@ import  { AppService }   from '../../app.service';
        <div class="row">
           <div  class="col-md-12">
               <p class="c-line-title">示例</p>
-              <ss-multiselect-dropdown [options]="myOptions" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="optionsModel" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+              <ss-multiselect-dropdown [options]="myOptions"
+              [texts]="myTexts" [settings]="mySettings" [(ngModel)]="optionsModel"
+              (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
           </div>
         </div>
         <div class="row">
@@ -63,8 +65,8 @@ export class MultiSelectDemoComponent {
         { id: 8, name: 'White', parentId: 5 }
     ];
 
-    constructor(private appService:AppService) {
-        this.appService.titleEventEmitter.emit("下拉");
+    constructor(private appService: AppService) {
+        this.appService.titleEventEmitter.emit('下拉');
     }
 
     onChange(e) {

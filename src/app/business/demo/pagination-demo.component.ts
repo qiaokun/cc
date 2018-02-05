@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { AppService } from '../../app.service';
 
@@ -16,9 +16,9 @@ import { ToastConfig, ToastType } from '../../shared/toast/toast-model';
               <p class="c-line-title">示例</p>
               <button type="button" class="btn btn-primary" (click)="changeData()">更换数据</button>
               <div  class="c-mt15">
-                   <c-pagination [total]="options.total" [pageList]="options.pageList" [btnCls]="btnCls" (onPageChanged)="onPageChanged($event)"></c-pagination>
+                   <c-pagination [total]="options.total" 
+                   [pageList]="options.pageList" [btnCls]="btnCls" (onPageChanged)="onPageChanged($event)"></c-pagination>
               </div>
-           
           </div>
         </div>
         <div class="row">
@@ -34,35 +34,35 @@ import { ToastConfig, ToastType } from '../../shared/toast/toast-model';
 })
 export class PaginationDemoComponent {
 
-  
 
-  btnCls: string = 'btn-outline-info';
+
+  btnCls = 'btn-outline-info';
 
   options: any = {
-    total: 60, //总条数
-    pageList: [15, 25, 35] //每页显示条数
+    total: 60, // 总条数
+    pageList: [15, 25, 35] // 每页显示条数
   }
 
-  
+
 
 
   constructor(private appService: AppService) {
-    this.appService.titleEventEmitter.emit("分页");
+    this.appService.titleEventEmitter.emit('分页');
   }
 
   onPageChanged($event) {
-    console.info($event);
+    window.console.info($event);
   }
 
   changeData() {
     this.options = {
-      total: 10, //总条数
-      pageList: [10, 15, 20] //每页显示条数
+      total: 10, // 总条数
+      pageList: [10, 15, 20] // 每页显示条数
 
     }
   }
 
-  
+
 
 
 

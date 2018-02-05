@@ -14,19 +14,14 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
        <div class="row">
           <div  class="col-md-12">
               <p class="c-line-title">示例</p>
- 
                     <div class="navbar navbar-default">
                         <div class="navbar-header">
                             <a class="navbar-brand" href>Angular2 File Upload</a>
                         </div>
                     </div>
-                
                     <div class="row">
-                
                         <div class="col-md-3">
-                
                             <h3>Select files</h3>
-                
                             <div ng2FileDrop
                                 [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
                                 (fileOver)="fileOverBase($event)"
@@ -34,7 +29,6 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
                                 class="well my-drop-zone">
                                 Base drop zone
                             </div>
-                
                             <div ng2FileDrop
                                 [ngClass]="{'another-file-over-class': hasAnotherDropZoneOver}"
                                 (fileOver)="fileOverAnother($event)"
@@ -42,19 +36,14 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
                                 class="well my-drop-zone">
                                 Another drop zone
                             </div>
-                
                             Multiple
                             <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>
-                
                             Single
                             <input type="file" ng2FileSelect [uploader]="uploader" />
                         </div>
-                
                         <div class="col-md-9" style="margin-bottom: 40px">
-                
                             <h3>Upload queue</h3>
                             <p>Queue length: {{ uploader?.queue?.length }}</p>
-                
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -96,7 +85,6 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
                                 </tr>
                                 </tbody>
                             </table>
-                
                             <div>
                                 <div>
                                     Queue progress:
@@ -117,13 +105,8 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
                                     <span class="glyphicon glyphicon-trash"></span> Remove all
                                 </button>
                             </div>
-                
                         </div>
-                
                     </div>
-                
-             
-              
           </div>
         </div>
         <div class="row">

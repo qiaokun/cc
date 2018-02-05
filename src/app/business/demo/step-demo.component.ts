@@ -1,8 +1,8 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { AppService } from '../../app.service';
-import { StepObj,StepData,StepType} from '../../shared/step/step-model';
-import { StepComponent} from '../../shared/step/step.component';
+import { StepObj, StepData, StepType } from '../../shared/step/step-model';
+import { StepComponent } from '../../shared/step/step.component';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { StepComponent} from '../../shared/step/step.component';
   templateUrl: './step-demo.component.html'
 })
 export class StepDemoComponent {
-  
+
   @ViewChild('step') step: StepComponent;
 
   stepData: StepData = {
@@ -22,9 +22,9 @@ export class StepDemoComponent {
     {
       id: '2',
       title: '填写用户名及密码',
-      data:{
-        code:'121212',
-        msg:'fdsfasfsaf'
+      data: {
+        code: '121212',
+        msg: 'fdsfasfsaf'
       }
     },
     {
@@ -37,17 +37,17 @@ export class StepDemoComponent {
     }]
   }
 
-  stepType:string=StepType.WARNING;
-  stepType2:string=StepType.DANGER;
-  stepType3:string=StepType.DARK;
-  stepType4:string=StepType.INFO;
-  stepType5:string=StepType.SECONDARY;
-  stepType6:string=StepType.SUCCESS;
-  stepType7:string=StepType.PRIMARY;
+  stepType: string = StepType.WARNING;
+  stepType2: string = StepType.DANGER;
+  stepType3: string = StepType.DARK;
+  stepType4: string = StepType.INFO;
+  stepType5: string = StepType.SECONDARY;
+  stepType6: string = StepType.SUCCESS;
+  stepType7: string = StepType.PRIMARY;
 
-  actionable: boolean = true;
+  actionable = true;
 
-  itemWidth:string='300px';
+  itemWidth = '300px';
 
   stepData2: StepData = {
     currentIndex: 1,
@@ -63,32 +63,32 @@ export class StepDemoComponent {
 
 
   constructor(private appService: AppService) {
-    this.appService.titleEventEmitter.emit("步骤条示例");
+    this.appService.titleEventEmitter.emit('步骤条示例');
   }
 
 
-  previous(){
-     this.step.previous();
+  previous() {
+    this.step.previous();
   }
 
-  next(){
+  next() {
     this.step.next();
   }
 
-  setIndex(){
+  setIndex() {
     this.step.setCurrentIndex(4);
   }
 
-  onClick(item){
-    console.info(item);
+  onClick(item) {
+    window.console.info(item);
   }
 
-  onPrevious(index){
-    console.info(index);
+  onPrevious(index) {
+    window.console.info(index);
   }
 
-  onNext(index){
-    console.info(index);
+  onNext(index) {
+    window.console.info(index);
   }
 
 }
